@@ -19,12 +19,15 @@
         </mat-toolbar-row>
       </mat-toolbar>
       <img class="list-cover-image" mat-card-image [src]="game.image_url" alt="game">
+      <!-- <pre>
+        {{game | json}}
+      </pre> -->
+      <iframe width="560" height="315" [src]="sanitize('https://www.youtube.com/embed/usaJqeL9o4M', game.autoplay)"></iframe>
       <mat-card-content>
         <p>ID: {{game._id}}</p>
         <P>Platform: {{game.platform}}</P>
         <P>Publisher: {{game.publisher}}</P>
         <P>Category: {{game.category}}</P>
-        
       </mat-card-content>
       <mat-card-actions>
         <button mat-raised-button (click)="deleteGame(game._id)" color="warn">
@@ -33,6 +36,10 @@
         </button>
         <button mat-raised-button color="accent" [routerLink]="['/game',game._id]">
           Edit
+          <mat-icon class="example-icon">edit</mat-icon>
+        </button>
+        <button mat-raised-button color="accent" (click)="game.autoplay = !(game.autoplay)">
+          Play auto-play status: ({{game.autoplay}})
           <mat-icon class="example-icon">edit</mat-icon>
         </button>
       </mat-card-actions>
