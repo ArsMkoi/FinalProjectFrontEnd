@@ -18,13 +18,13 @@
           <mat-card-subtitle></mat-card-subtitle>
         </mat-toolbar-row>
       </mat-toolbar>
-      <img class="list-cover-image" mat-card-image [src]="game.image_url" alt="game">
+      <!-- <img class="list-cover-image" mat-card-image [src]="game.image_url" alt=""> -->
       <!-- <pre>
         {{game | json}}
       </pre> -->
-      <iframe width="560" height="315" [src]="sanitize('https://www.youtube.com/embed/usaJqeL9o4M', game.autoplay)"></iframe>
+      <iframe class="video" width="560" height="315" [src]="sanitize(game.video_url, game.autoplay)"></iframe>
       <mat-card-content>
-        <p>ID: {{game._id}}</p>
+        <!-- <p>ID: {{game._id}}</p> -->
         <P>Platform: {{game.platform}}</P>
         <P>Publisher: {{game.publisher}}</P>
         <P>Category: {{game.category}}</P>
@@ -39,7 +39,7 @@
           <mat-icon class="example-icon">edit</mat-icon>
         </button>
         <button mat-raised-button color="accent" (click)="game.autoplay = !(game.autoplay)">
-          Play auto-play status: ({{game.autoplay}})
+          AutoPlay Status: ({{game.autoplay}})
           <mat-icon class="example-icon">edit</mat-icon>
         </button>
       </mat-card-actions>
