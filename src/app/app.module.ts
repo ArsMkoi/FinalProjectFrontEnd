@@ -11,9 +11,6 @@ import { MaterialDesignModule } from './material-design/material-design.module';
 import { AppComponent } from './app.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { MainFooterComponent } from './main-footer/main-footer.component';
-import { DocsComponent } from './docs/docs.component';
-import { DocsButtonsComponent } from './docs/docs-buttons/docs-buttons.component';
-
 import { HomeComponent } from './home/home.component';
 
 
@@ -32,7 +29,6 @@ import { GameCreateComponent } from './games/game-create/game-create.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'docs', component: DocsComponent },
   // users
   { path: 'users', component: UsersComponent },
   { path: 'user/:id', component: UserComponent },
@@ -48,8 +44,6 @@ const appRoutes: Routes = [
     AppComponent,
     MainNavComponent,
     MainFooterComponent,
-    DocsComponent,
-    DocsButtonsComponent,
     HomeComponent,
     // users
     UsersComponent,
